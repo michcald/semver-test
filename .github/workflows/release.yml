@@ -10,7 +10,6 @@ on:
 jobs:
   release:
     name:  Release
-    needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
