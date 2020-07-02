@@ -1,0 +1,22 @@
+name: Build
+on:
+  push:
+    branches:
+      - master
+      - alpha
+      - beta
+      - next
+  pull_request:
+jobs:
+  release:
+    name:  Release
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: SemVer
+        run: docker run --rm -e GITHUB_TOKEN=${GITHUB_TOKEN} -v "${PWD}":/app divido/devtools:semver
+
+
