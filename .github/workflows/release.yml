@@ -19,5 +19,6 @@ jobs:
         uses: actions/checkout@v2
       - name: SemVer
         run: docker run --rm -e GITHUB_TOKEN=${GITHUB_TOKEN} -v "${PWD}":/app divido/devtools:semver
-
+      - name: Version
+        run: cat .RELEASE_VERSION
 
