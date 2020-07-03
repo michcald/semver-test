@@ -26,5 +26,5 @@ jobs:
             export RELEASE_VERSION="$(cat .RELEASE_VERSION)"
           fi
       - name: Version
-        run: echo "created version: $RELEASE_VERSION"
+        run: echo $RELEASE_VERSION
 
