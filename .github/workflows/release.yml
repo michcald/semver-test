@@ -4,9 +4,7 @@ on:
     branches:
       - master
       - develop
-      - alpha
-      - beta
-      - next
+      - '+([0-9])?(.{+([0-9]),x}).x'
   pull_request:
 jobs:
   release:
